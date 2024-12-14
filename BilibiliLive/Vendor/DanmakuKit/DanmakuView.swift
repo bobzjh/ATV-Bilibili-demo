@@ -160,7 +160,7 @@ public class DanmakuView: UIView {
         }
     }
 
-    public var playingSpeed: Float = 1.0 {
+    public var playingSpeed: Float = 2.0 {
         willSet {
             assert(newValue > 0, "Danmaku playing speed must be over 0.")
         }
