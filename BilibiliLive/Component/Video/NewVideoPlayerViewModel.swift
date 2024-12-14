@@ -7,6 +7,7 @@
 
 import Combine
 import UIKit
+import AVKit
 
 struct PlayerDetailData {
     let aid: Int
@@ -104,7 +105,8 @@ class VideoPlayerViewModel {
             if let info, info.last_play_cid == cid, playData.dash.duration - info.playTimeInSecond > 5, Settings.continuePlay {
                 detail.playerStartPos = info.playTimeInSecond
             }
-
+            let playerVC = await AVPlayerViewController()
+            await playerVC.selectSpeed(AVPlaybackSpeed(rate:2.0, localizedName: "2.0"))
             return detail
 
         } catch let err {
