@@ -93,6 +93,9 @@
 		499C76132931A781003160FB /* Swifter in Frameworks */ = {isa = PBXBuildFile; productRef = 499C76122931A781003160FB /* Swifter */; };
 		499C76162931A7AE003160FB /* SwiftyXMLParser in Frameworks */ = {isa = PBXBuildFile; productRef = 499C76152931A7AE003160FB /* SwiftyXMLParser */; };
 		49A441CD293F6DFD0007606C /* FollowUpsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A441CC293F6DFD0007606C /* FollowUpsViewController.swift */; };
+		49ADA8392D0BCD79004801EF /* MainActor+Safe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ADA8382D0BCD71004801EF /* MainActor+Safe.swift */; };
+		49ADA83D2D0C0FC2004801EF /* BvidConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ADA83C2D0C0FC2004801EF /* BvidConvertor.swift */; };
+		49ADA83F2D0C1ADF004801EF /* VideoDanmuFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ADA83E2D0C1ADF004801EF /* VideoDanmuFilter.swift */; };
 		49D250A02C118FA700173908 /* URLPlayPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D2509F2C118FA700173908 /* URLPlayPlugin.swift */; };
 		49D250A22C11A82B00173908 /* AVPlayerMetaUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D250A12C11A82B00173908 /* AVPlayerMetaUtils.swift */; };
 		49D39F28263AD40000F14497 /* WebRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D39F27263AD40000F14497 /* WebRequest.swift */; };
@@ -104,6 +107,7 @@
 		49F918722931E927001D3EC3 /* AvTransportScpd.xml in Resources */ = {isa = PBXBuildFile; fileRef = 49F918712931E927001D3EC3 /* AvTransportScpd.xml */; };
 		49FB8EC0291F4C520045D5DE /* VMaskProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FB8EBF291F4C520045D5DE /* VMaskProvider.swift */; };
 		49FB8EE929208EBE0045D5DE /* SidxParseUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FB8EE829208EBE0045D5DE /* SidxParseUtil.swift */; };
+		695081FB2D0FD9E30063044D /* PocketSVG in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 49078E46291BEA2400F556BD /* PocketSVG */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		AE2B41552912706700BF2B0B /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2B41542912706700BF2B0B /* SearchResultViewController.swift */; };
 		AE2B41572914C02000BF2B0B /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2B41562914C02000BF2B0B /* Int.swift */; };
 		AE4889B228FE55DA00E8C5CD /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4889B128FE55DA00E8C5CD /* FavoriteViewController.swift */; };
@@ -153,6 +157,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				695081FB2D0FD9E30063044D /* PocketSVG in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,6 +302,9 @@
 		499C75ED29305A1E003160FB /* BiliBiliUpnpDMR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiliBiliUpnpDMR.swift; sourceTree = "<group>"; };
 		499C760E2930E068003160FB /* NVASocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NVASocket.swift; sourceTree = "<group>"; };
 		49A441CC293F6DFD0007606C /* FollowUpsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowUpsViewController.swift; sourceTree = "<group>"; };
+		49ADA8382D0BCD71004801EF /* MainActor+Safe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainActor+Safe.swift"; sourceTree = "<group>"; };
+		49ADA83C2D0C0FC2004801EF /* BvidConvertor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BvidConvertor.swift; sourceTree = "<group>"; };
+		49ADA83E2D0C1ADF004801EF /* VideoDanmuFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDanmuFilter.swift; sourceTree = "<group>"; };
 		49D2509F2C118FA700173908 /* URLPlayPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLPlayPlugin.swift; sourceTree = "<group>"; };
 		49D250A12C11A82B00173908 /* AVPlayerMetaUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVPlayerMetaUtils.swift; sourceTree = "<group>"; };
 		49D39F27263AD40000F14497 /* WebRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebRequest.swift; sourceTree = "<group>"; };
@@ -417,6 +425,7 @@
 				2806E5212C16011B00164C10 /* ReplyCell.swift */,
 				2806E5222C16011B00164C10 /* ReplyCell.xib */,
 				49389D6128AFEA2900B9DAFD /* VideoDanmuProvider.swift */,
+				49ADA83E2D0C1ADF004801EF /* VideoDanmuFilter.swift */,
 				497CF2322C16EDAC006E1488 /* MaskProvider */,
 				492AD70C2BFF33DF007221C8 /* VideoPlayerViewController.swift */,
 				492AD70E2BFF6761007221C8 /* NewVideoPlayerViewModel.swift */,
@@ -429,6 +438,7 @@
 		49389D6028AFE91E00B9DAFD /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				49ADA8382D0BCD71004801EF /* MainActor+Safe.swift */,
 				F99D28E926195EC200F8E66A /* UIView+Layout.swift */,
 				49389D8828B0A1B700B9DAFD /* UIViewController+Ext.swift */,
 				494741BF29002797005D6885 /* UserDefault+..swift */,
@@ -631,6 +641,7 @@
 		49D39F26263AD3F100F14497 /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				49ADA83C2D0C0FC2004801EF /* BvidConvertor.swift */,
 				0A41EE1A2A63102B0066444C /* dm.pb.swift */,
 				0A41EE1B2A63102B0066444C /* dmView.pb.swift */,
 				49D39F27263AD40000F14497 /* WebRequest.swift */,
@@ -912,7 +923,9 @@
 				AEA6AB1628FFE951007CE72E /* SettingsViewController.swift in Sources */,
 				49389D8928B0A1B700B9DAFD /* UIViewController+Ext.swift in Sources */,
 				AE2B41572914C02000BF2B0B /* Int.swift in Sources */,
+				49ADA83F2D0C1ADF004801EF /* VideoDanmuFilter.swift in Sources */,
 				498CF2932B63AABE0009793E /* memory.c in Sources */,
+				49ADA8392D0BCD79004801EF /* MainActor+Safe.swift in Sources */,
 				498CF2A72B63AABE0009793E /* decode.c in Sources */,
 				F90AAE04265549B5008DE7C2 /* FeedViewController.swift in Sources */,
 				2DBE4C4D2628818F00D20413 /* HistoryViewController.swift in Sources */,
@@ -1007,6 +1020,7 @@
 				F927ED8826103CFB00EAB8E3 /* DanmakuTextCell.swift in Sources */,
 				0A41EE1C2A63102B0066444C /* dm.pb.swift in Sources */,
 				F9171D6429010DF1002868C7 /* FeedCollectionViewCell.swift in Sources */,
+				49ADA83D2D0C0FC2004801EF /* BvidConvertor.swift in Sources */,
 				F927ED902610A5E900EAB8E3 /* CookieManager.swift in Sources */,
 				F927ED792610395400EAB8E3 /* DanmakuCellModel.swift in Sources */,
 				497CF2372C16EDE5006E1488 /* BVideoClipsPlugin.swift in Sources */,

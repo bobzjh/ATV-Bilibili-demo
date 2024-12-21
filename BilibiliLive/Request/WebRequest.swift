@@ -157,10 +157,11 @@ enum WebRequest {
                     let object = try (decoder ?? JSONDecoder()).decode(T.self, from: data)
                     complete?(.success(object))
                 } catch let err {
-                    print("decode fail:", err)
+                    Logger.warn("decode fail: \(err)")
                     complete?(.failure(.decodeFail(message: err.localizedDescription + String(describing: err))))
                 }
             case let .failure(err):
+                Logger.warn("request fail: \(err)")
                 complete?(.failure(err))
             }
         }
@@ -184,7 +185,7 @@ enum WebRequest {
             switch response {
             case let .success(data):
                 do {
-                    let protobufObject = try T(serializedData: data)
+                    let protobufObject = try T(serializedBytes: data)
                     complete?(.success(protobufObject))
                 } catch let err {
                     Logger.warn("Protobuf parsing error: \(err.localizedDescription)")
@@ -728,10 +729,15 @@ struct Replys: Codable, Hashable {
             let url: String
         }
 
+        struct JumpUrl: Codable, Hashable {
+            let title: String
+        }
+
         struct Content: Codable, Hashable {
             let message: String
             let pictures: [Picture]?
             let emote: [String: Emote]?
+            let jump_url: [String: JumpUrl]?
 
             struct Picture: Codable, Hashable {
                 let img_src: String
