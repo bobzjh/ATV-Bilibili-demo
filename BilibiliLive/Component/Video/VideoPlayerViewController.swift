@@ -44,7 +44,13 @@ class VideoNextProvider {
 class VideoPlayerViewController: CommonPlayerViewController {
     var data: VideoDetail?
     var nextProvider: VideoNextProvider?
+    // 添加一个回调属性
+    var onDismissCallback: (() -> Void)?
 
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        onDismissCallback?()
+    }
     init(playInfo: PlayInfo) {
         viewModel = VideoPlayerViewModel(playInfo: playInfo)
         super.init(nibName: nil, bundle: nil)
