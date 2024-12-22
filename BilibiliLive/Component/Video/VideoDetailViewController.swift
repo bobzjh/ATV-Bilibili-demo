@@ -17,6 +17,9 @@ import SnapKit
 import TVUIKit
 
 class VideoDetailViewController: UIViewController {
+    // 添加一个回调属性
+    var onDismissCallback: (() -> Void)?
+
     private var loadingView = UIActivityIndicatorView()
     @IBOutlet var backgroundImageView: UIImageView!
     @IBOutlet var effectContainerView: UIVisualEffectView!
@@ -157,6 +160,9 @@ class VideoDetailViewController: UIViewController {
             vc.present(self, animated: false) { [weak self] in
                 guard let self else { return }
                 let player = VideoPlayerViewController(playInfo: PlayInfo(aid: self.aid, cid: self.cid, epid: self.epid, isBangumi: self.isBangumi))
+                player.onDismissCallback = { [weak self] in
+                    self?.onDismissCallback?()
+                }
                 self.present(player, animated: true)
             }
         }
