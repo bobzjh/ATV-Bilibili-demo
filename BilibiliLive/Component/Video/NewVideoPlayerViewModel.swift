@@ -106,12 +106,17 @@ class VideoPlayerViewModel {
                 detail.playerStartPos = info.playTimeInSecond
             }
             // Create AVPlayer and set playback speed
-            let player = AVPlayer(url: playData.dash.url)
-            player.rate = 2.0 // Set playback speed to 2x
+            if let baseURL = playData.dash.video.first?.base_url {
+                let player = AVPlayer(url: URL(string: baseURL)!)
+                player.rate = 2.0 // Set playback speed to 2x
 
-            // Create AVPlayerViewController and assign player
-            let playerVC = AVPlayerViewController()
-            playerVC.player = player
+                // Ensure mutation on the main actor
+                await MainActor.run {
+                    let playerVC = AVPlayerViewController()
+                    playerVC.player = player
+                }
+            }
+            
             return detail
 
         } catch let err {
