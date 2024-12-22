@@ -57,7 +57,11 @@ class StandardVideoCollectionViewController<T: PlayableData>: UIViewController, 
 
     func goDetail(with record: T) {
         let detailVC = VideoDetailViewController.create(aid: record.aid, cid: record.cid)
-        detailVC.present(from: self)
+        detailVC.onDismissCallback = {
+            // 处理返回到之前的 UIViewController
+            self.presentingViewController?.present(detailVC, animated: true, completion: nil)
+        }
+        self.present(detailVC, animated: true, completion: nil)
     }
 
     func reloadData() {
