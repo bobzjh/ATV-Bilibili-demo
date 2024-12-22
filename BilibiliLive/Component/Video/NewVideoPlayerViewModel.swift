@@ -106,7 +106,7 @@ class VideoPlayerViewModel {
                 detail.playerStartPos = info.playTimeInSecond
             }
             let playerVC = await AVPlayerViewController()
-            await playerVC.selectSpeed(AVPlaybackSpeed(rate:2.0, localizedName: "2.0"))
+            await playerVC.selectSpeed(AVPlaybackSpeed(rate:2.5, localizedName: "2.5"))
             return detail
 
         } catch let err {
