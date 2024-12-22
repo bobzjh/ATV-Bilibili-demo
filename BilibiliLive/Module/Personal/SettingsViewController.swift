@@ -114,7 +114,7 @@ class SettingsViewController: UIViewController {
     private func setupData() {
         createSnapshot {
             SectionModel(title: "通用") {
-                Toggle(title: "启用投屏", setting: Settings.enableDLNA, onChange: Settings.enableDLNA.toggle()) {
+                Toggle(title: "启用投屏1", setting: Settings.enableDLNA, onChange: Settings.enableDLNA.toggle()) {
                     _ in
                     BiliBiliUpnpDMR.shared.start()
                 }
