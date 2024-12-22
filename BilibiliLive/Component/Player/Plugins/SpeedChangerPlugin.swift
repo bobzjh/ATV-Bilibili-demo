@@ -11,18 +11,21 @@ class SpeedChangerPlugin: NSObject, CommonPlayerPlugin {
     private weak var player: AVPlayer?
     private weak var playerVC: AVPlayerViewController?
 
-    @Published private(set) var currentPlaySpeed: PlaySpeed = .default
+    @Published private(set) var currentPlaySpeed: PlaySpeed = .init(name: "2X", value: 2.0) // Set default to 2x speed
 
     func playerDidLoad(playerVC: AVPlayerViewController) {
         self.playerVC = playerVC
+        playerVC.player?.rate = currentPlaySpeed.value // Ensure the player uses the desired speed
     }
 
     func playerDidChange(player: AVPlayer) {
         self.player = player
+        player.rate = currentPlaySpeed.value // Ensure the player uses the desired speed
     }
 
     func playerWillStart(player: AVPlayer) {
         playerVC?.selectSpeed(AVPlaybackSpeed(rate: currentPlaySpeed.value, localizedName: currentPlaySpeed.name))
+        player.rate = currentPlaySpeed.value // Ensure the player uses the desired speed    
     }
 
     func addMenuItems(current: inout [UIMenuElement]) -> [UIMenuElement] {
@@ -35,6 +38,7 @@ class SpeedChangerPlugin: NSObject, CommonPlayerPlugin {
                 player?.currentItem?.audioTimePitchAlgorithm = .timeDomain
                 playerVC?.selectSpeed(AVPlaybackSpeed(rate: playSpeed.value, localizedName: playSpeed.name))
                 currentPlaySpeed = playSpeed
+                player?.rate = playSpeed.value // Ensure the player uses the selected speed
             }
         }
         let playSpeedMenu = UIMenu(title: "播放速度", options: [.displayInline, .singleSelection], children: speedActions)
