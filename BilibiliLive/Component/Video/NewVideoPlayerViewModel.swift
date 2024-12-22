@@ -105,8 +105,13 @@ class VideoPlayerViewModel {
             if let info, info.last_play_cid == cid, playData.dash.duration - info.playTimeInSecond > 5, Settings.continuePlay {
                 detail.playerStartPos = info.playTimeInSecond
             }
-            let playerVC = await AVPlayerViewController()
-            await playerVC.selectSpeed(AVPlaybackSpeed(rate:2.5, localizedName: "2.5"))
+            // Create AVPlayer and set playback speed
+            let player = AVPlayer(url: playData.dash.url)
+            player.rate = 2.0 // Set playback speed to 2x
+
+            // Create AVPlayerViewController and assign player
+            let playerVC = AVPlayerViewController()
+            playerVC.player = player
             return detail
 
         } catch let err {
