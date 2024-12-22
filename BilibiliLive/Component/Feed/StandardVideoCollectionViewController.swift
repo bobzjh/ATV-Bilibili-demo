@@ -56,12 +56,12 @@ class StandardVideoCollectionViewController<T: PlayableData>: UIViewController, 
     }
 
     func goDetail(with record: T) {
-        let detailVC = VideoDetailViewController.create(aid: record.aid, cid: record.cid)
-        detailVC.onDismissCallback = {
-            // 处理返回到之前的 UIViewController
-            self.presentingViewController?.present(detailVC, animated: true, completion: nil)
+        let player = VideoPlayerViewController(playInfo: PlayInfo(aid: record.aid, cid: record.cid, epid: 0, isBangumi: false))
+        player.onDismissCallback = { [weak self] in
+            guard let self = self else { return }
+            self.dismiss(animated: true, completion: nil)
         }
-        self.present(detailVC, animated: true, completion: nil)
+        self.present(player, animated: true, completion: nil)
     }
 
     func reloadData() {
