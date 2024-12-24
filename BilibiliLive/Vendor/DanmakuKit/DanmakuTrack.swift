@@ -74,7 +74,7 @@ class DanmakuFloatingTrack: NSObject, DanmakuTrack, CAAnimationDelegate {
         return cells.count
     }
 
-    var playingSpeed: Float = 2.0
+    var playingSpeed: Float = 1.0
 
     private var cells: [DanmakuCell] = []
 
@@ -255,7 +255,7 @@ class DanmakuVerticalTrack: NSObject, DanmakuTrack, CAAnimationDelegate {
 
     var cells: [DanmakuCell] = []
 
-    var playingSpeed: Float = 2.0
+    var playingSpeed: Float = 1.0
 
     private weak var view: UIView?
 
